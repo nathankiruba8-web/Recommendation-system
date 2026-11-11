@@ -1,0 +1,31 @@
+# Android & Gradle
+*.iml
+.gradle
+.kotlin
+/local.properties
+local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+.env
+debug.keystore
+*.apk
+*.aab
+
+# Python & Django Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+db.sqlite3
+/backend/staticfiles/
+/backend/media/
+/backend/.env
+venv/
+.venv/
+env/
+ENV/
+*.log

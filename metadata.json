@@ -1,0 +1,6 @@
+{
+  "name": "LifeSync",
+  "description": "Personal Decision Recommendation Engine with multi-criteria analysis, goals, and planner",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

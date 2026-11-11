@@ -1,0 +1,28 @@
+databases:
+  - name: lifesync-db
+    databaseName: lifesync
+    user: lifesync_user
+    plan: free
+
+services:
+  - type: web
+    name: lifesync-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn lifesync_project.wsgi:application --log-file -"
+    healthCheckPath: "/api/v1/health/"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: lifesync-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: CORS_ALLOW_ALL_ORIGINS
+        value: "True"
